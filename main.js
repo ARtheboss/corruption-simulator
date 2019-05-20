@@ -376,6 +376,7 @@ function run(){
 		}else{
 			giveInfo("Be careful. You might have made him angry...");
 		}
+		on = 26.9;
 	}else if(on == 26.9){
 		if(engagedInCorruption()){
 			giveQuestion("Your term in nearing an end. What do you want to do about your corruption status?",["Cover up (expensive)","Ignore","Confess"]);
