@@ -470,7 +470,7 @@ function run(){
 		on = 101;
 	}else if(on == 101){
 		if(results[9] == 1){
-			giveQuestion("Finding a job might be a bit difficult, considering that the supermarket giant Fencemart recently fired about half of their staff, and nobody knows why. You now have more competition in your job search. After the rule of President "+name+", there have been few foreign companies coming into Graftlandia. What do you want to do?",["Wait some time before applying","Apply for some jobs"]);
+			giveQuestion("Finding a job might be a bit difficult, considering that the supermarket giant Fencemart recently fired about half of their staff, and nobody knows why. You now have more competition in your job search. Also, after the rule of President "+name+", there have been few foreign companies coming into Graftlandia. What do you want to do?",["Wait some time before applying","Apply for some jobs"]);
 		}else{
 			giveQuestion("Your first step will be to decide what to do with your job situation.",["Wait some time before applying","Apply for some jobs"]);
 		}
