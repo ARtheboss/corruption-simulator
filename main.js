@@ -568,7 +568,7 @@ function run(){
 			}
 		}else{
 			if(results[21] == 2){
-				giveQuestion("Your experience at the construction site made you realize you should probably get a health insurance, because if something happens to you it will be hard for you to afford it. However, President "+name+" recently got rid of government provided healthcare. What do you want to do?",["Get the Gold Package (-$199 every month)","Get the Silver Package (-$99 every month)","Opt out"]);
+				giveQuestion("Your experience at the construction site made you realize you should probably get a health insurance, because if something happens to you it will be hard for you to afford it. However, President "+name+" recently got rid of government provided healthcare. What do you want to do?",["Get the Gold Package (-$39 every turn)","Get the Silver Package (-$19 every turn)","Opt out"]);
 				on = 110;
 			}else{
 				giveQuestion("Your experience at the construction site made you realize you should probably get a health insurance, because if something happens to you it will be hard for you to afford it. What do you want to do?",["Apply for free governmental healthcare","Opt out"]);
