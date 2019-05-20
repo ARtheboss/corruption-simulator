@@ -747,10 +747,12 @@ function run(){
 		}
 		on = 124;
 	}else if(on == 124){
+		animateBg(360);
 		giveInfo("As you see the group of young, desperate citizens that crowd your office, you realize the actual consequence of your stolen millions.");
 		on = 125;
 	}else if(on == 125){
 		if(results[122] == 1){
+			animateBg(360);
 			giveQuestion("Pull the trigger?",["Yes","No"]);
 		}
 		on = 126;
@@ -771,12 +773,14 @@ function run(){
 		giveInfo("Such a big protest was destined to go south. Nobody really knows how it happened, or why it happened, but the gunshots that echoed across the city said that it did happen. 12 civilians were shot dead, with at least 50 that were injured.");
 		on = 136;
 	}else if(on == 136){
+		animateBg(360);
 		giveInfo("Just days after the massacre, you sit in your office, on top of the millions you accumlated in your bank account, and think: Was the money really worth it at the end of the day?");
 		on = 137;
 	}else if(on == 137){
 		giveInfo("Right as you think that, a young man slams open your door and pulls something metallic out of his pocket...");
 		on = 138;
 	}else if(on == 138){
+		animateBg(360);
 		giveInfo("You read about ex-President "+name+"'s assassination in the paper the next day. The man stole millions from the country...");
 		on = 139;
 	}else if(on == 139){
@@ -851,6 +855,7 @@ function run(){
 	}
 
 	else if(on == 250){
+		animateBg(360);
 		giveInfo("As you sit in the Bahamas, a wanted man after escaping prison, you think: Was the money worth it at the end of the day?");
 		on = 251;
 	}else if(on == 251){
