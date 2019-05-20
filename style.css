@@ -118,22 +118,26 @@ body{
 	flex:20%;
 	background:#a01111;
 	position:relative;
+	font-size:1.5vw;
 }
 .substat{
 	background:white;
 	width:18vw;
 	height:7.5vh;
-	margin:1vw;
+	margin:1vh 1vw;
 }
 .heading{
 	padding: 0.5vh 0.5vw;
 	font-weight:800;
 	border-style:solid;
 	border-color:#a01111;
-	border-width: 0 0 0.2vw 0;
+	border-width: 0 0 0.2vh 0;
+	overflow: scroll;
+	height:3.5vh;
 }
 .value{
 	margin-left:1vw;
+	height:3.5vh;
 }
 .game{
 	flex:80%;
@@ -143,4 +147,13 @@ body{
 	text-align: center;
 	font-size:3vw;
 	color:white;
+}
+.zero{
+	margin-left:3.9vw;
+}
+.slider{
+	height:3.5vh;
+	width:0.6vw;
+	background:#a01111;
+	position: absolute;
 }
