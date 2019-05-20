@@ -850,8 +850,6 @@ function run(){
 		on = 200;
 	}
 
-	console.log(on);
-
 	if(on < 30){
 		if(peopleTrust < 1){
 			suspicious = (-peopleTrust + 1)/2;
@@ -863,8 +861,8 @@ function run(){
 			money += 25000;
 			investigation += suspicious * oliAngry * complaintActionMult;
 			moneyInfo.innerHTML = getMoneyString(money);
-			trustInfo.style.width = Math.min(peopleTrust,10)*10 + "%";
-			investigationInfo.style.width = Math.min(investigation,10)*10 + "%";
+			trustInfo.style.left = (Math.max(Math.min(peopleTrust,10),0) * 1.66 + 1.3) + "vw";
+			investigationInfo.left = (Math.max(Math.min(investigation,10)*10,0) * 1.66 + 1.3) + "vw";
 		if(investigation > 10 && impeachment == false){
 			giveInfo("A report on you has been released. Specifically, a report on your corruption. Whoever made it uncovered every single one of your scandals, providing more than enough evidence for you impeachment.")
 			on = 50;
@@ -885,7 +883,3 @@ function run(){
 		}
 	}
 }
-
-
-
-
