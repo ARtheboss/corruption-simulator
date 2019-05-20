@@ -118,7 +118,7 @@ body{
 	flex:20%;
 	background:#a01111;
 	position:relative;
-	font-size:1.5vw;
+	font-size:1vw;
 }
 .substat{
 	background:white;
@@ -149,7 +149,7 @@ body{
 	color:white;
 }
 .zero{
-	margin-left:3.9vw;
+	margin-left:5.3vw;
 }
 .slider{
 	height:3.5vh;
