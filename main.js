@@ -669,6 +669,7 @@ function run(){
 		}
 	}else if(on == 220.1){
 		giveInfo("Corruption can cause inflation and make governmental services more expensive. Think about it. If there are government officials that are stealing money from the country, the country will have less money to subsidize certain services.");
+		on = 116;
 	}else if(on == 220){
 		if(healthcare > 0){
 			giveQuestion("How would you like to pay for your wounds?",["Use your healthcare package (free)","Clean them yourself at home"]);
