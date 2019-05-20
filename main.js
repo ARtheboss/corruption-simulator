@@ -785,7 +785,7 @@ function run(){
 		giveQuestion("The international media is already claiming that Graflandia's latest President is also heavily corrupt.",["Believe them","Don't believe"]);
 		on = 402;
 	}else if(on == 402){
-		giveInfo("It doesn't matter what you believe. You are lucky to have access to such news. Most of your neighbours will probably never hear such news because of Graftlandia's censorship anyway...");
+		giveInfo("Unfortunately, it doesn't matter what you believe. You are lucky to have access to such news. Most of your neighbours will probably never hear such news because of Graftlandia's censorship anyway...");
 		on = 403;
 	}else if(on == 403){
 		giveInfo("And even though you had this knowledge, what did you do with it? When the time came to protest the corrupt government, you refused. If YOU don't take action, who will?");
