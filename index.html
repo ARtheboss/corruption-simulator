@@ -11,7 +11,7 @@
 			<div class='heading'>Money Earned</div>
 			<div class='value' id='money' style='color:#084f09'>$0</div>
 		</div>
-		<div class='substat'>
+		<div class='substat' id='popstat'>
 			<div class='heading'>Population Trust</div>
 			<div class='value'>
 				<span class='neg'>-5</span>
@@ -20,7 +20,7 @@
 				<div id='trust' class='slider' style='top:14vh;left:9.7vw;'></div>
 			</div>
 		</div>
-		<div class='substat'>
+		<div class='substat' id='invstat'>
 			<div class='heading'>Investigation Progress</div>
 			<div class='value'>
 				<span class='neg'>0%</span>
@@ -37,6 +37,7 @@
 		</div>
 	</div>
 	<div class='game'>
+		<div class='big' id='final' style='display:none;top:10vh;font-size:2vw;text-align: center;'>You have reached the end of this round,<br> but there are many other versions to this story.</div>
 		<div class='title big' id='title'>
 			<h1>Corruption Simulator</h1>
 			<h2>By Advay Ratan</h2>
@@ -55,7 +56,7 @@
 		<div class='info big' id='info'>
 			<div id='text'></div>
 			<div style='height:4vw;'></div>
-			<button onclick="run()">Next</button>
+			<button onclick="run()" id='nextBut'>Next</button>
 		</div>
 	</div>
 	<script src="main.js"></script>
