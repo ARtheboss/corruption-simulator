@@ -446,11 +446,13 @@ function run(){
 		giveInfo("You foolishly revealed your corruption to the country. But even though it is now out in the open, it had many consequences on your country.")
 		on = 51;
 	}else if(on == 51){
-		giveInfo("You will soon find out what the consequences are...");
+		giveInfo("You made you choices as a President, and in the next phase of this game you will find out what the consequences of your actions are by becoming a regular member of the population.");
+		document.getElementById('nextBut').innerHTML = "Corruption Simulator: Part 2";
 		on = 52;
 	}
 
 	else if(on == 52){
+		document.getElementById('nextBut').innerHTML = "Next";
 		animateBg(360);
 		on = 100;
 		run();
@@ -460,12 +462,14 @@ function run(){
 
 
 	else if(on == 100){
+		document.getElementById('popstat').style.display = "none";
+		document.getElementById('invstat').style.display = "none";
 		if(isSudip(name)){
 			money = 1;
 			giveInfo("Congratulations, "+name+"! You just graduated from high school in Banglore! You had never thought this day would come, and now it has. With $1 in your pocket, you will leave the shelter of your home and move to Mumbai!<br><br>In other news, the term of President "+name+" ended (who weirdly happens to have the same name as you). Now, onto life. Let's see if you will be able to become the Wrapper Tycoon...");
 		}else{
 			money = 2000;
-			giveInfo("Congratulations, "+name+"! You just graduated from high school! You had never thought this day would come, and now it has. With $2,000 in your pocket, you will leave the shelter of your home and go into the working world!<br><br>In other news, the term of President "+name+" ended (who weirdly happens to have the same name as you). Now, onto life...");
+			giveInfo("Congratulations, "+name+"! You just graduated from high school! You had never thought this day would come, and now it has. With $2,000 in your pocket, you will leave the shelter of your home and go into the working world!<br><br>In other news, the term of ex-President "+name+" ended (who weirdly happens to have the same name as you). Now, onto life...");
 		}
 		on = 101;
 	}else if(on == 101){
@@ -551,7 +555,7 @@ function run(){
 			on = 109.3;
 		}
 	}else if(on == 109.3){
-		giveInfo("Corruption can also cause comapnies to ignore safety standards. Safety is often expensive, and it can be cheaper for companies to bribe government officials to overlook that fact. Of course, the jepordizes the safety of the workers, and is ethically wrong.");
+		giveInfo("Corruption can also cause companies to ignore safety standards. Safety is often expensive, and it can be cheaper for companies to bribe government officials to overlook that fact. Of course, the jepordizes the safety of the workers, and is ethically wrong.");
 		on = 109;
 	}else if(on == 109){
 		if(results[109.2] == 2 || !engagedInCorruption()){
@@ -795,9 +799,13 @@ function run(){
 		on = 200;
 	}
 
-
 	else if(on == 200){
+		document.getElementById('final').style.display = 'block';
+		document.getElementById('nextBut').innerHTML = "Finish";
+		on = 200.1;
+	}else if(on == 200.1){
 		showTitle();
+		document.getElementById('final').style.display = 'none';
 		document.getElementById('startBut').innerHTML = "Replay";
 		on = 201;
 	}else if(on == 201){
@@ -862,7 +870,7 @@ function run(){
 			investigation += suspicious * oliAngry * complaintActionMult;
 			moneyInfo.innerHTML = getMoneyString(money);
 			trustInfo.style.left = (Math.max(Math.min(peopleTrust,10),0) * 1.66 + 1.3) + "vw";
-			investigationInfo.left = (Math.max(Math.min(investigation,10)*10,0) * 1.66 + 1.3) + "vw";
+			investigationInfo.style.left = (Math.max(Math.min(investigation,10),0) * 1.66 + 1.3) + "vw";
 		if(investigation > 10 && impeachment == false){
 			giveInfo("A report on you has been released. Specifically, a report on your corruption. Whoever made it uncovered every single one of your scandals, providing more than enough evidence for you impeachment.")
 			on = 50;
@@ -883,3 +891,7 @@ function run(){
 		}
 	}
 }
+
+
+
+
