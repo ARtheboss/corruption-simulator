@@ -372,6 +372,7 @@ function run(){
 	}else if(on == 26.1){
 		if(results[on] == 1){
 			money += 80000000;
+			peopleTrust -= 0.5 * oliAngry * complaintActionMult;
 			giveInfo("That's a lot of money you earned right there.");
 		}else{
 			giveInfo("Be careful. You might have made him angry...");
