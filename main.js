@@ -527,6 +527,8 @@ function run(){
 			}else{
 				giveInfo("Your report was submitted. Let's see if the government's anti-corruption agencies do anything.")
 			}
+		}else{
+			giveInfo("That doesn't help anyone.")
 		}
 		on = 108;
 	}else if(on == 108){
@@ -554,7 +556,7 @@ function run(){
 	}else if(on == 109){
 		if(results[109.2] == 2 || !engagedInCorruption()){
 			if(results[21] == 2){
-				giveQuestion("You realize you should probably get a health insurance, because if something happens to you it will be hard for you to afford it. However, President "+name+" recently got rid of government provided healthcare. What do you want to do?",["Get the Gold Package (-$199 every month)","Get the Silver Package (-$99 every month)","Opt out"]);
+				giveQuestion("You realize you should probably get a health insurance, because if something happens to you it will be hard for you to afford it. However, President "+name+" recently got rid of government provided healthcare. What do you want to do?",["Get the Gold Package (-$39 every turn)","Get the Silver Package (-$19 every turn)","Opt out"]);
 				on = 110;
 			}else{
 				giveQuestion("You realize you should probably get a health insurance, because if something happens to you it will be hard for you to afford it. What do you want to do?",["Apply for free governmental healthcare","Opt out"]);
@@ -571,10 +573,10 @@ function run(){
 		}
 	}else if(on == 110){
 		if(results[110] == 1){
-			healthcare = 199;
+			healthcare = 39;
 			giveInfo("Expensive! Doesn't it make you angry at President "+name+" for stopping healthcare?");
 		}else if(results[110] == 2){
-			healthcare = 99;
+			healthcare = 19;
 			giveInfo("Expensive! Doesn't it make you angry at President "+name+" for stopping healthcare?");
 		}else if(results[110] == 3){
 			giveInfo("A risky move. Even a broken bone might be too expensive for you...");
@@ -582,6 +584,7 @@ function run(){
 		on = 112;
 	}else if(on == 111){
 		if(results[111] == 1){
+			healthcare = 1;
 			giveInfo("Doesn't it make you happy that President "+name+" didn't do anything to the healthcare budget?");
 		}else if(results[111] == 2){
 			giveInfo("That was a bit stupid. Why would you not want free healthcare?");
@@ -663,7 +666,7 @@ function run(){
 	}else if(on == 220.1){
 		giveInfo("Corruption can cause inflation and make governmental services more expensive. Think about it. If there are government officials that are stealing money from the country, the country will have less money to subsidize certain services.");
 	}else if(on == 220){
-		if(healthcare > 0 || results[21] !== 2){
+		if(healthcare > 0){
 			giveQuestion("How would you like to pay for your wounds?",["Use your healthcare package (free)","Clean them yourself at home"]);
 			on = 212;
 		}else{
@@ -849,7 +852,7 @@ function run(){
 
 	console.log(on);
 
-	if(on < 100){
+	if(on < 30){
 		if(peopleTrust < 1){
 			suspicious = (-peopleTrust + 1)/2;
 		}
@@ -868,10 +871,18 @@ function run(){
 			impeachment = true;
 		}
 	}else{
-		money -= Math.round((Math.random()/4+0.25) * 200);
-		money -= healthcare;
-		money += salary;
-		moneyInfo.innerHTML = getMoneyString(money);
+		if(money !== 0){
+			money -= Math.round((Math.random()/4+0.25) * 200);
+			money -= healthcare;
+			money += salary;
+			moneyInfo.innerHTML = getMoneyString(money);
+		}
+		if(money < 0){
+			money = 0;
+			moneyInfo.innerHTML = getMoneyString(money);
+			giveInfo("Unfortunately, you ran out of money. This is what corruption does. It steals money from the population and makes the rich richer. Corruption didn't allow you to get a job, made you pay more for public services, and generally made your life worse. Corruption is truly a global issue that plagues our modern world...");
+			on = 200;
+		}
 	}
 }
 
