@@ -270,7 +270,7 @@ function run(){
 		if(results[15]==1){
 			complaintActionMult = 3;
 			peopleTrust += 0.5;
-			giveInfo("The people trust you more, but now your corruption will be noticed much more. Even the smallest mistake can ruin your career.");
+			giveInfo("The people trust you more, but now your future corruption will be noticed much more. Even the smallest mistake can ruin your career.");
 		}else if(results[15] == 2){
 			peopleTrust -= 0.5 * oliAngry * complaintActionMult;
 			money -= 25000000;
@@ -367,7 +367,7 @@ function run(){
 			on = 26;
 		}
 	}else if(on == 26){
-		giveQuestion("A member of one of the biggest organized crime units in Graflandia discretely approaches you (so there is no evidence that it is actually him). He is offering you a large sum of money if you work with him. What do you want to do?",["Agree to the money","Decline"]);
+		giveQuestion("A member of one of the biggest organized crime units in Graftlandia discretely approaches you (so there is no evidence that it is actually him). He is offering you a large sum of money if you work with him. What do you want to do?",["Agree to the money","Decline"]);
 		on = 26.1;
 	}else if(on == 26.1){
 		if(results[on] == 1){
@@ -426,7 +426,7 @@ function run(){
 		on = 30;
 	}else if(on == 30){
 		if(!engagedInCorruption()){
-			giveInfo("You made the term! The people absolutely loved you as a leader!");
+			giveInfo("You made the term! The people absolutely loved you as a leader! However, you didn't earn as much money as required, so you still get one star.");
 		}else{
 			if(money > 200000000){
 				giveInfo("Congratulations! You survived without your corruption being discovered. You made a total of "+ getMoneyString(money) +"! Your retirement is set! Three stars!");
@@ -498,13 +498,8 @@ function run(){
 		giveInfo("According to Olivia Durden, a businesses expert, companies need to raise prices to neutralize the costs of their corruption. This means that fewer people buy their products, and the company goes into loss. The fictional Fencemart is an example of such a company that had to fire half of its staff to cut costs and get back on track. Not to mention the massive PR problems if their corruption gets discovered.");
 		on = 103;
 	}else if(on == 103){
-		if(engagedInCorruption()){
-			giveQuestion("Your driving license recently elapsed, and although you can't yet afford a car, you want to get it renewed so that you can drive your parent's car. When you go to the office, the man working there says it will take at least 5 months, but you can get it within a week if you pay him a small fee...",["Pay the fee (-$200)","Wait 5 months"]);
-			on = 104;
-		}else{
-			giveQuestion("Your driving license recently elapsed, and although you can't yet afford a car, you still want to drive your parent's car.",["Renew license","Wait until you get a car"]);
-			on = 104.5;
-		}
+		giveQuestion("Your driving license recently elapsed, and although you can't yet afford a car, you want to get it renewed so that you can drive your parent's car. When you go to the office, the man working there says it will take at least 5 months, but you can get it within a week if you pay him a small fee...",["Pay the fee (-$200)","Wait 5 months"]);
+		on = 104;
 	}else if(on == 104){
 		if(results[104] == 1){
 			money -= 200;
@@ -513,9 +508,6 @@ function run(){
 			giveInfo("That's a long time...");
 		}
 		on = 105;
-	}else if(on == 104.5){
-		giveInfo("Fair decision");
-		on = 109;
 	}else if(on == 105){
 		giveInfo("Put yourself in the perspective of the government officials. He can earn some quick cash, and since the leaders are loose on corruption he won't face any consequences. Why wouldn't he ask for a bribe?");
 		on = 106;
@@ -532,7 +524,8 @@ function run(){
 				giveInfo("Your report was submitted. Let's see if the government's anti-corruption agencies do anything.")
 			}
 		}else{
-			giveInfo("That doesn't help anyone.")
+			giveInfo("That doesn't help anyone.");
+
 		}
 		on = 108;
 	}else if(on == 108){
@@ -702,7 +695,11 @@ function run(){
 				on = 117;
 			}
 		}else{
-			on = 150;
+			if(results[107] == 2){
+				on = 500;
+			}else{
+				on = 150;
+			}
 			run();
 		}
 	}else if(on == 117){
@@ -794,7 +791,7 @@ function run(){
 		giveInfo("As expected, the protest was pretty useless. The government barely batted an eye.");
 		on = 401;
 	}else if(on == 401){
-		giveQuestion("The international media is already claiming that Graflandia's latest President is also heavily corrupt.",["Believe them","Don't believe"]);
+		giveQuestion("The international media is already claiming that Graftlandia's latest President is also heavily corrupt.",["Believe them","Don't believe"]);
 		on = 402;
 	}else if(on == 402){
 		giveInfo("Unfortunately, it doesn't matter what you believe. You are lucky to have access to such news. Most of your neighbors will probably never hear such news because of Graftlandia's censorship anyway...");
@@ -815,6 +812,42 @@ function run(){
 		on = 201;
 	}else if(on == 201){
 		location.reload();
+	}
+
+
+
+	else if(on == 500){
+		giveQuestion("Even after ex-President "+name+"'s anti-corruption, Graftlandia still recently moved down on the corruption rankings. According to another study you saw, most of Graftlandia's corruption is in lower government officials, who policy can't control. Why do you think Graftlandia is becoming more corrupt?",["The government is doing a bad job","The people are taking corruption too lightly"]);
+		on = 501;
+	}else if(on == 501){
+		if(results[501] == 1){
+			giveInfo("Unfortunately, that isn't the case. It is people like you who aren't reporting the corruption who are the problem.")
+		}else{
+			giveInfo("You know the problem, you know the cause, yet when the time came to take action, you shied away, much like many others in Graftlandia.")
+		}
+		on = 502;
+	}else if(on == 502){
+		giveInfo("Sovling corruption is a team effort.");
+		on = 503;
+	}else if(on == 503){
+		giveInfo("BREAKING NEWS: ex-President "+name+" recently died of a stroke!");
+		on = 504;
+	}else if(on == 504){
+		giveQuestion("The country wants to pay respects to the ex-President. Would you support the building of a statue in the ex-President's memory?",["Yes","No"]);
+		on = 505;
+	}else if(on == 505){
+		giveInfo("The results were overwhelmingly positive. Even though the people want to honor the ex-President's memory by making a statue, they ignore his legacy by allowing corruption to manifest in Graftlandia");
+		on = 506;
+	}else if(on == 506){
+		giveQuestion("You go to the local government office to renew your passport. The man working there tells you that you need to pay a fee of $200. In light of the recent news about Graftlandia's corruption, you:",["Trust him and pay the fee (-$200)","Look up the rules yourself"]);
+		on = 507;
+	}else if(on == 507){
+		if(results[507] == 1){
+			giveInfo("Let's be honest. You will be more careful than normal. That is what corruption does: It shatters the important bonds between the people and the government. If the man turned out to be corrupt, would you still not report this incident?");
+		}else{
+			giveInfo("Like any sane person, you will be more careful than normal. That is what corruption does: It shatters the important bonds between the people and the government. If the man turned out to be corrupt, would you still not report this incident?");
+		}
+		on = 200;
 	}
 
 
@@ -884,7 +917,7 @@ function run(){
 		}
 	}else{
 		if(money !== 0){
-			money -= Math.round((Math.random()/4+0.25) * 200);
+			money -= Math.round((Math.random()/4+0.25) * 150);
 			money -= healthcare;
 			money += salary;
 			moneyInfo.innerHTML = getMoneyString(money);
