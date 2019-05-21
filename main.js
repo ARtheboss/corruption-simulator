@@ -140,14 +140,14 @@ function run(){
 	}else if(on == 1){
 		name = getting.value;
 		if(isSudip(name)){
-			giveInfo("<b style='color:white;'>Welcome to Graftlandia, "+name+"!</b><br><br> Recently, you decided that running an aluminium foil company wasn't good enough, so you run for President, and you won!<br><br>Congratulations!<br><br> You know you will go down as one of the all-time great Presidents. But you can only serve two terms, so your goal right now is to earn as much money as possible to build on your Wrapper Tycoon before your inevitable retirement.<br><br>The method of earning said money is up to you...");
+			giveInfo("<b style='color:white;'>Welcome to Graftlandia, "+name+"!</b><br><br> Recently, you decided that running an aluminium foil company wasn't good enough, so you ran for President, and you won!<br><br>Congratulations!<br><br> You know you will go down as one of the all-time great Presidents. But you can only serve two terms, so your goal right now is to earn as much money as possible to build on your Wrapper Tycoon before your inevitable retirement.<br><br>The method of earning said money is up to you...");
 			money = 300000000;
 		}else{
 			giveInfo("<b style='color:white;'>Welcome to Graftlandia, "+name+"!</b><br><br> You and your highly successful political party have just won the recent elections.<br><br>Congratulations!<br><br> You know you will go down as one of the all-time great Presidents. But you can only serve two terms, so your goal right now is to earn as much money as possible before your inevitable retirement.<br><br>The method of earning said money is up to you...");
 		}
 		on = 2;
 	}else if(on == 2){//Q0
-		giveQuestion("Your friend asks if you want to start an offshore company, slowly taking money out of your defence budget in fake but secure transactions. This is low risk unless someone is looking for you. (You will earn money periodically)",['Yes','No','No and Report']);
+		giveQuestion("Your friend asks if you want to start an offshore company, slowly taking money out of your defense budget in fake but secure transactions. This is a low-risk job unless someone is looking for you. (You will earn money periodically)",['Yes','No','No and Report']);
 		on = 3;
 	}else if(on == 3){
 		if(results[on] == 3){
@@ -163,10 +163,10 @@ function run(){
 		}
 		on = 4;
 	}else if(on == 4){
-		giveInfo("Offshore companies are companies that headquartered in other countries that are secretly owned by leaders. The leaders make transactions of money into these companies so that it seem like they are legitimate expenditures. This method makes it quite easy to steal millions from a country's budget.")
+		giveInfo("Offshore companies are companies that headquartered in other countries that are secretly owned by leaders. The leaders make transactions of money into these companies so that it seems like they are legitimate expenditures. This method makes it quite easy to steal millions from a country's budget.")
 		on = 5;
 	}else if(on == 5){//Q1
-		giveQuestion("You just received a confidential report on a corrupt member of parliament by an investigator. Nobody else knows that this report exists. Now the decision is up to you.",["Put the accused to justice","Blackmail the accused for money"])
+		giveQuestion("You just received a confidential report on a corrupt member of parliament by an investigator. Nobody else knows that this report exists. Now the decision is up to you.",["Put the accused to justice","Blackmail the accused to earn money"])
 		on = 6;
 	}else if(on == 6){
 		if(results[on] == 2){
@@ -179,10 +179,10 @@ function run(){
 		}
 		on = 7;
 	}else if(on == 7){
-		giveInfo("Failure to take action about known problems is as big a problem as the corruption itself. If nobody takes action and just tolerates corruption, nothing will improve. For example, Russia is a country with a high tolerance of corruption. They also have high rates of corruption, for such a powerful country. Coincidence?");
+		giveInfo("Failure to take action about known problems is as big a problem as the corruption itself. If nobody takes action and just tolerates corruption, nothing will improve. For example, Russia is a country with a high tolerance to corruption. They also have high rates of corruption, for such a powerful country. Coincidence?");
 		on = 8;
 	}else if(on == 8){
-		giveQuestion("An international supermarket named Fencemart has recently been competing with a couple others for a prime spot of land in the Graftlandia capital city. They offer you a bit of money as a 'gift', but you know what it really means.",['Accept','Decline']);
+		giveQuestion("An international supermarket named Fencemart has recently been competing with a couple of others for a prime spot of land in the Graftlandia capital city. They offer you a bit of money as a 'gift', but you know what it really means.",['Accept','Decline']);
 		on = 9;
 	}else if(on == 9){//Q2
 		if(results[on] == 1){
@@ -329,7 +329,7 @@ function run(){
 		}
 	}else if(on == 22){
 		if(liability!=100000){
-			giveInfo("The day of reckoning has arrived. A couple months ago, you promised to decrease corruption. Your verdict is that...");
+			giveInfo("The day of reckoning has arrived. A couple of months ago, you promised to decrease corruption. Your verdict is that...");
 			on = 23;
 		}else{
 			on = 24;
@@ -474,7 +474,7 @@ function run(){
 		on = 101;
 	}else if(on == 101){
 		if(results[9] == 1){
-			giveQuestion("Finding a job might be a bit difficult, considering that the supermarket giant Fencemart recently fired about half of their staff, and nobody knows why. You now have more competition in your job search. Also, after the rule of President "+name+", there have been few foreign companies coming into Graftlandia. What do you want to do?",["Wait some time before applying","Apply for some jobs"]);
+			giveQuestion("Finding a job might be a bit difficult, considering that the supermarket giant Fencemart recently fired about half of their staff, and nobody knows why. You now have more competition in your job search. Also, after the rule of President "+name+", there have been few foreign companies coming into Graftlandia. What do you want to do?",["Wait sometime before applying","Apply for some jobs"]);
 		}else{
 			giveQuestion("Your first step will be to decide what to do with your job situation.",["Wait some time before applying","Apply for some jobs"]);
 		}
@@ -495,7 +495,7 @@ function run(){
 		}
 		on = 102.5;
 	}else if(on == 102.5){
-		giveInfo("According to Olivia Durden, a businesses expert, companies need to raise prices to neutralize the costs of their corruption. This means that less people buy their products, and the company goes into loss. The fictional Fencemart is an example of such a company that had to fire half of their staff to cut costs and get back on track. Not to mention the massive PR problems if their corruption gets discovered.");
+		giveInfo("According to Olivia Durden, a businesses expert, companies need to raise prices to neutralize the costs of their corruption. This means that fewer people buy their products, and the company goes into loss. The fictional Fencemart is an example of such a company that had to fire half of its staff to cut costs and get back on track. Not to mention the massive PR problems if their corruption gets discovered.");
 		on = 103;
 	}else if(on == 103){
 		if(engagedInCorruption()){
@@ -517,7 +517,7 @@ function run(){
 		giveInfo("Fair decision");
 		on = 109;
 	}else if(on == 105){
-		giveInfo("Put yourself in the perspective of the government officer. He can earn some quick cash, and since the leaders are loose on corruption he won't face any consequences. Why wouldn't he ask for a bribe?");
+		giveInfo("Put yourself in the perspective of the government officials. He can earn some quick cash, and since the leaders are loose on corruption he won't face any consequences. Why wouldn't he ask for a bribe?");
 		on = 106;
 	}else if(on == 106){
 		giveQuestion("You return home and realized that the man that asked for a bribe should be put to justice. If you don't take action against corruption, it will just grow and ruin your life even more, right?",["Report the incident","Stay quiet"]);
@@ -527,7 +527,7 @@ function run(){
 			if(results[15] == 2){
 				giveInfo("You don't know about this, but the government anti-corruption organizations were actually paid off by President "+name+" to ignore the complaints. You reporting the incident was sort of useless.");
 			}else if(results[15] == 3){
-				giveInfo("Too bad for you, President "+name+" actually shut down reports for corruption. In other words, you cannot report corruption any more.");
+				giveInfo("Too bad for you, President "+name+" actually shut down reports for corruption. In other words, you cannot report corruption anymore.");
 			}else{
 				giveInfo("Your report was submitted. Let's see if the government's anti-corruption agencies do anything.")
 			}
@@ -536,7 +536,7 @@ function run(){
 		}
 		on = 108;
 	}else if(on == 108){
-		giveInfo("Even the smallest actions against corruption come in handy. To solve corruption, vigilant populations are required. A country with a high level of tolerance for corruption is Russia (Moscow Times), and today they are ranked very high on the corruption rankings, especially for one of the major world powers.");
+		giveInfo("Even the smallest actions against corruption come in handy. To solve corruption, vigilant populations are required. A country with a high level of tolerance to corruption is Russia (Moscow Times), and today they are ranked very high on the corruption rankings, especially for one of the major world powers.");
 		on = 109.1;
 	}else if(on == 109.1){
 		giveQuestion("You have been offered a job at a construction site for a week (after two of their members got injured right before the deadline).",["Accept (+$200)","Decline"]);
@@ -545,7 +545,7 @@ function run(){
 		if(results[on] == 1){
 			money += 200;
 			if(engagedInCorruption()){
-				giveInfo("When you get to the construction site, you are appalled by the safety standards. Workers are using cheap cement, half of the hard hats are broken, and workers are put into risky situations. For exmaple, you had to hang off the side of the 4th floor for a job without a harness! It was very scary.");
+				giveInfo("When you get to the construction site, you are appalled by the safety standards. Workers are using cheap cement, half of the hard hats are broken, and workers are put into risky situations. For example, you had to hang off the side of the 4th floor for a job without a harness! It was very scary.");
 			}else{
 				giveInfo("The work was surprisingly easy. A quick $200 that will last you some time.");
 			}
@@ -555,23 +555,23 @@ function run(){
 			on = 109.3;
 		}
 	}else if(on == 109.3){
-		giveInfo("Corruption can also cause companies to ignore safety standards. Safety is often expensive, and it can be cheaper for companies to bribe government officials to overlook that fact. Of course, the jepordizes the safety of the workers, and is ethically wrong.");
+		giveInfo("Corruption can also cause companies to ignore safety standards. Safety is often expensive, and it can be cheaper for companies to bribe government officials to overlook that fact. Of course, the jeopardizes the safety of the workers, and is ethically wrong.");
 		on = 109;
 	}else if(on == 109){
 		if(results[109.2] == 2 || !engagedInCorruption()){
 			if(results[21] == 2){
-				giveQuestion("You realize you should probably get a health insurance, because if something happens to you it will be hard for you to afford it. However, President "+name+" recently got rid of government provided healthcare. What do you want to do?",["Get the Gold Package (-$39 every turn)","Get the Silver Package (-$19 every turn)","Opt out"]);
+				giveQuestion("You realize you should probably get health insurance because if something happens to you it will be hard for you to afford it. However, President "+name+" recently got rid of government provided healthcare. What do you want to do?",["Get the Gold Package (-$39 every turn)","Get the Silver Package (-$19 every turn)","Opt out"]);
 				on = 110;
 			}else{
-				giveQuestion("You realize you should probably get a health insurance, because if something happens to you it will be hard for you to afford it. What do you want to do?",["Apply for free governmental healthcare","Opt out"]);
+				giveQuestion("You realize you should probably get health insurance because if something happens to you it will be hard for you to afford it. What do you want to do?",["Apply for free governmental healthcare","Opt out"]);
 				on = 111;
 			}
 		}else{
 			if(results[21] == 2){
-				giveQuestion("Your experience at the construction site made you realize you should probably get a health insurance, because if something happens to you it will be hard for you to afford it. However, President "+name+" recently got rid of government provided healthcare. What do you want to do?",["Get the Gold Package (-$39 every turn)","Get the Silver Package (-$19 every turn)","Opt out"]);
+				giveQuestion("Your experience at the construction site made you realize you should probably get health insurance because if something happens to you it will be hard for you to afford it. However, President "+name+" recently got rid of government provided healthcare. What do you want to do?",["Get the Gold Package (-$39 every turn)","Get the Silver Package (-$19 every turn)","Opt out"]);
 				on = 110;
 			}else{
-				giveQuestion("Your experience at the construction site made you realize you should probably get a health insurance, because if something happens to you it will be hard for you to afford it. What do you want to do?",["Apply for free governmental healthcare","Opt out"]);
+				giveQuestion("Your experience at the construction site made you realize you should probably get health insurance because if something happens to you it will be hard for you to afford it. What do you want to do?",["Apply for free governmental healthcare","Opt out"]);
 				on = 111;
 			}
 		}
@@ -616,7 +616,7 @@ function run(){
 			on = 114.5;
 		}
 	}else if(on == 114.5){
-		giveInfo("Corruption has many adverse affects on economic equality. Recently in Malaysia, PM Najib Razak was convicted of stealing $600 million from a state fund. He obviously denied it. When a local courier was interviewed, he said 'How did [Najib] accumulate such wealth when the majority of us live a modest life?'");
+		giveInfo("Corruption has many adverse effects on economic equality. Recently in Malaysia, PM Najib Razak was convicted of stealing $600 million from a state fund. He obviously denied it. When a local courier was interviewed, he said 'How did [Najib] accumulate such wealth when the majority of us live a modest life?'");
 		on = 115;
 	}else if(on == 115){
 		if(results[104] == 1){
@@ -651,7 +651,7 @@ function run(){
 		if(results[211] == 1){
 			if(results[26.1]==1){
 				money -= 4;
-				giveInfo("This was the cheaper option, so it would have made sense if you weren't at the wrong place at the wrong time. You encountered two rival gangs going at each other on the train. A bullet grazed you.");
+				giveInfo("This was the cheaper option so it would have made sense if you weren't at the wrong place at the wrong time. You encountered two rival gangs going at each other on the train. A bullet grazed you.");
 				on = 220;
 			}else{
 				money -= 4;
@@ -668,7 +668,7 @@ function run(){
 			on = 212;
 		}
 	}else if(on == 220.1){
-		giveInfo("Corruption can cause inflation and make governmental services more expensive. Think about it. If there are government officials that are stealing money from the country, the country will have less money to subsidize certain services.");
+		giveInfo("Corruption can cause inflation and make government services more expensive. Think about it. If there are government officials that are stealing money from the country, the country will have less money to subsidize certain services.");
 		on = 116;
 	}else if(on == 220){
 		if(healthcare > 0){
@@ -687,7 +687,7 @@ function run(){
 		}
 		on = 212;
 	}else if(on == 212){
-		giveInfo("Corruption fosters crime in neighborhoods (U4 Anti Corruption). For one, corruption means higher rates of unemployment and a poorer population, and it is common knowledge that poverty causes crime. Another reason corruption fosters crime is because the police may end up being tolerant to bribes from the mafia (organized crime) or gang members, allowing them to grow unchecked.");
+		giveInfo("Corruption fosters crime in neighborhoods (U4 Anti Corruption). For one, corruption means higher rates of unemployment and a poorer population, and it is common knowledge that poverty causes crime. Another reason corruption fosters crime is that the police may end up being tolerant to bribes from the mafia (organized crime) or gang members, allowing them to grow unchecked.");
 		on = 116;
 	}else if(on == 116){
 		if(engagedInCorruption()){
@@ -735,16 +735,16 @@ function run(){
 		on = 122;
 	}else if(on == 122){
 		if(results[122] == 1){
-			giveInfo("Your group heads into "+name+"'s nearby manor, and overpower the frightened secuirty guards very quickly. You and the group rush up the stairs of the house...");
+			giveInfo("Your group heads into "+name+"'s nearby manor, and overpower the frightened security guards very quickly. You and the group rush up the stairs of the house...");
 		}else{
-			giveInfo("The group continues without you into  "+name+"'s nearby manor, and overpower the frightened secuirty guards very quickly. They rush up the stairs of the house...");
+			giveInfo("The group continues without you into  "+name+"'s nearby manor, and overpower the frightened security guards very quickly. They rush up the stairs of the house...");
 		}
 		on = 123;
 	}else if(on == 123){
 		if(results[122] == 1){
-			giveInfo("And see the frigthened "+name+". He seem to know what is coming. In all this mess you have gotten a gun from somewhere...");
+			giveInfo("And see the frightened "+name+". He seems to know what is coming. In all this mess you have gotten a gun from somewhere...");
 		}else{
-			giveInfo("And see the frigthened "+name+". He seem to know what is coming. In all this mess the group has gotten a gun from somewhere...");
+			giveInfo("And see the frightened "+name+". He seems to know what is coming. In all this mess the group has gotten a gun from somewhere...");
 		}
 		on = 124;
 	}else if(on == 124){
@@ -775,7 +775,7 @@ function run(){
 		on = 136;
 	}else if(on == 136){
 		animateBg(360);
-		giveInfo("Just days after the massacre, you sit in your office, on top of the millions you accumlated in your bank account, and think: Was the money really worth it at the end of the day?");
+		giveInfo("Just days after the massacre, you sit in your office, on top of the millions you accumulated in your bank account, and think: Was the money really worth it at the end of the day?");
 		on = 137;
 	}else if(on == 137){
 		giveInfo("Right as you think that, a young man slams open your door and pulls something metallic out of his pocket...");
@@ -797,7 +797,7 @@ function run(){
 		giveQuestion("The international media is already claiming that Graflandia's latest President is also heavily corrupt.",["Believe them","Don't believe"]);
 		on = 402;
 	}else if(on == 402){
-		giveInfo("Unfortunately, it doesn't matter what you believe. You are lucky to have access to such news. Most of your neighbours will probably never hear such news because of Graftlandia's censorship anyway...");
+		giveInfo("Unfortunately, it doesn't matter what you believe. You are lucky to have access to such news. Most of your neighbors will probably never hear such news because of Graftlandia's censorship anyway...");
 		on = 403;
 	}else if(on == 403){
 		giveInfo("And even though you had this knowledge, what did you do with it? When the time came to protest the corrupt government, you refused. If YOU don't take action, who will?");
@@ -822,7 +822,7 @@ function run(){
 
 	else if(on == 150){
 		if(results[102] == 2){
-			giveQuestion("Your job application in the warehouse of a local paper company has been approved! Accept offer at $100/week?",["Yes","No"]);
+			giveQuestion("Your job application in the warehouse of a local paper company has been approved! Accept the offer at $100/week?",["Yes","No"]);
 		}else{
 			giveQuestion("The job situation in Graftlandia is looking very promising. Would you like to apply now?",["Yes","No"])
 		}
@@ -878,7 +878,7 @@ function run(){
 			trustInfo.style.left = (Math.max(Math.min(peopleTrust,10),0) * 1.66 + 1.3) + "vw";
 			investigationInfo.style.left = (Math.max(Math.min(investigation,10),0) * 1.66 + 1.3) + "vw";
 		if(investigation > 10 && impeachment == false){
-			giveInfo("A report on you has been released. Specifically, a report on your corruption. Whoever made it uncovered every single one of your scandals, providing more than enough evidence for you impeachment.")
+			giveInfo("A report on you has been released. Specifically, a report on your corruption. Whoever made it uncovered every single one of your scandals, providing more than enough evidence for your impeachment.")
 			on = 50;
 			impeachment = true;
 		}
